@@ -2,9 +2,9 @@
 
 # Folder Structure
 - packages/
--   client/
--   common/
--   server/
+- packages/client/
+- packages/common/
+- packages/server/
 
 
 # How to run in development environment
