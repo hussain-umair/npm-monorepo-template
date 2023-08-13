@@ -1,0 +1,13 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "portal's server",
+  "main": "src/index.js",
+  "license": "ISC",
+  "scripts": {
+    "dev": "node src/index.js"
+  },
+  "dependencies": {
+    "common": "*"
+  }
+}
