@@ -1,10 +1,9 @@
-function logger() {
+export function logger() {
   console.log('logger utility')
 }
-function formatter () {
+export function formatter () {
   console.log('formatter utility')
 }
-module.exports = {
-  logger,
-  formatter
-}
+
+export default { logger, formatter }
+

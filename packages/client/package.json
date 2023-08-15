@@ -5,9 +5,12 @@
   "main": "src/index.js",
   "license": "ISC",
   "scripts": {
-    "dev": "node src/index.js"
+    "dev": "nodemon --exec babel-node src/index.js"
   },
   "dependencies": {
     "common": "*"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.22.10"
   }
 }

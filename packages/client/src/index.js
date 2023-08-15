@@ -1,4 +1,4 @@
-const { logger, formatter } = require("common")
-console.log('hello from client')
+import { logger, formatter } from 'common'
 logger()
 formatter()
+console.log('hello from client=> ')

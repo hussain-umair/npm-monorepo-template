@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "license": "ISC",
   "scripts": {
-    "dev": "node src/index.js"
+    "dev": "nodemon --exec babel-node src/index.js"
   },
   "dependencies": {
     "common": "*"

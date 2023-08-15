@@ -1,14 +1,22 @@
 {
   "name": "common",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "exports": {
     ".": {
-      "import": "./src/index.js",
-      "require": "./src/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
     }
   },
   "scripts": {
-    "dev": "node src/index.js"
+    "start": "nodemon --watch src --exec \"npm run build\"",
+    "dev": "npm start",
+    "build": "babel src --out-dir dist"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.22.10"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }
