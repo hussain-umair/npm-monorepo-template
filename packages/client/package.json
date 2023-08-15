@@ -5,12 +5,18 @@
   "main": "src/index.js",
   "license": "ISC",
   "scripts": {
-    "dev": "nodemon --exec babel-node src/index.js"
+    "clean": "rm -rf dist/**",
+    "dev": "rm -rf node_modules/.vite && vite --config vite.config.js serve",
+    "build": "vite --config vite.config.js build"
   },
   "dependencies": {
-    "common": "*"
+    "common": "*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.65.1"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.22.10"
+    "@vitejs/plugin-react": "^4.0.4",
+    "vite": "^4.4.9"
   }
 }

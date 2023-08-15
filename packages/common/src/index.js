@@ -1,8 +1,8 @@
 export function logger() {
-  console.log('logger utility')
+  return 'logger utility'
 }
 export function formatter () {
-  console.log('formatter utility')
+  return 'formatter utility'
 }
 
 export default { logger, formatter }
