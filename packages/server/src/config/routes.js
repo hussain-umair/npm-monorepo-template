@@ -1,8 +1,7 @@
-import { Router } from "express"
-import { apiRoot } from "./constants"
-import { readdir, stat } from "fs/promises"
-import { join } from "path"
-
+import { Router } from 'express'
+import { apiRoot } from './constants'
+import { readdir, stat } from 'fs/promises'
+import { join } from 'path'
 
 const walkRoutes = async (apiDir, app) => {
   const items = await readdir(apiDir)
@@ -11,8 +10,8 @@ const walkRoutes = async (apiDir, app) => {
     const stats = await stat(itemPath)
     if (stats.isDirectory()) {
       const router = new Router({ mergeParams: true })
-      app.use(`/${itemPath}`, router)
-      walkRoutes(itemPath, router)
+      app.use(`/${item}`, router)
+      await walkRoutes(itemPath, router)
     } else {
       const handler = await import(itemPath)
       handler.default?.(app)
@@ -23,7 +22,7 @@ const walkRoutes = async (apiDir, app) => {
 
 const setupRoutes = async app => {
   const apiRouter = await walkRoutes(apiRoot, new Router())
-  
+
   app.use('/api', apiRouter)
 }
 
