@@ -1,4 +1,4 @@
-import User from '../../../db/models/User'
+import User from '../../db/models/User'
 
 const handler = app =>
   app.post('/signup', async (req, res) => {

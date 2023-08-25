@@ -1,9 +1,9 @@
 import { join } from 'path'
-import { store } from '../../src/config/constants'
+import { storeRootDir } from '../../config/constants'
 import { readFile, writeFile } from '../utils'
 
 const userDataFilename = 'users.json'
-const userStore = join(store, userDataFilename)
+const userStore = join(storeRootDir, userDataFilename)
 
 class User {
   constructor(user) {
@@ -13,6 +13,7 @@ class User {
 
   static async findOneBy(key, value) {
     const users = await readFile(userStore)
+
     for (const user of users) {
       if (user[key] === value) return user
     }
